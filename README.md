@@ -48,6 +48,9 @@ where d.DX in (
 )
 ```
 
+![patient.png](image/patient.png)
+
+
 3. 查询病种前三的诊断
 
 
@@ -65,6 +68,8 @@ where d.DX in (
        where ROWNUM <= 3
 )
 ```
+
+![diag.png](image/diag.png)
 
 
 ## 画图
@@ -116,8 +121,6 @@ GROUP BY sex
 
 选择柱状如，以 `age` 为维度，`CNT PATIENT_ID`为度量，（即以`PATIENT_ID` 计数）, 以 `dx` 下拉选项中选择 `J98.402` 过滤，代表过滤肺部感染的患者，其他的类似，就是过滤的选项换下
 
-![age-bar.png](image/age-bar.png)
-
 ```oracle
 -- 逻辑
 SELECT
@@ -127,3 +130,4 @@ FROM patient
 WHERE dx = 'J98.402'
 GROUP BY age
 ```
+![age-bar.png](image/age-bar.png)
